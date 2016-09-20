@@ -29,7 +29,7 @@ class SimpleServer(object):
 
     @cherrypy.expose
     def stream(self, group_id, instance_id, item_id, quality='0'):
-        return self.s.retrieve_episode(group_id, instance_id, item_id, quality)
+        return self.s.retrieve_episode_mp4(group_id, instance_id, item_id, quality)
 
     stream._cp_config = {'response.stream': True}
     cherrypy.server.socket_host = '0.0.0.0'
